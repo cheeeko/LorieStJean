@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Art by Lorie St Jean</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+    }
+
+    header {
+      position: relative;
+      text-align: center;
+      padding: 3em 1em;
+      background: url('mountain.jpg') no-repeat center center;
+      background-size: cover;
+      color: #333;
+      border-bottom: 1px solid #ddd;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(255, 255, 255, 0.6);
+      z-index: 0;
+    }
+
+    header h1, nav {
+      position: relative;
+      z-index: 1;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 1em;
+    }
+
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+      padding: 1em 2em;
+    }
+
+    .painting {
+      border: 1px solid #eee;
+      padding: 1em;
+      background-color: #fff;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+    }
+
+    .painting img {
+      width: 200px;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .price {
+      margin-top: 0.5em;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .about, .contact {
+      padding: 2em;
+      background-color: #f9f9f9;
+      margin: 2em;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 0.6em 0.8em;
+      font-size: 1.2em;
+      background-color: #ff8c00;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    #backToTop:hover {
+      background-color: #e07c00;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Art by Lorie St Jean</h1>
+    <nav>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About Me</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="gallery" class="gallery">
+    <div class="painting">
+      <img src="horse.jpg" alt="Horse">
+      <div class="price">$200</div>
+    </div>
+    <div class="painting">
+      <img src="cool.jpg" alt="Valley">
+      <div class="price">$180</div>
+    </div>
+    <div class="painting">
+      <img src="red.jpg" alt="John Marston">
+      <div class="price">$150</div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m Lorie St Jean, a passionate painter inspired by nature, emotions, and the vibrant culture around me. Each piece is crafted with heart and soul—thank you for visiting my gallery!</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: @</p>
+    <p>Instagram: @</p>
+    <p>Phone: +</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Art by Lorie St Jean. All rights reserved.
+  </footer>
+
+  <button id="backToTop" title="Back to top">⬆</button>
+
+  <script>
+    const backToTopBtn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>
